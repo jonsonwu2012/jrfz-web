@@ -32,7 +32,8 @@ a{{color:var(--olive)}}
 .top nav a:hover{{color:var(--olive)}}
 main{{max-width:900px;margin:auto;padding:40px 5% 80px}}
 h1,h2,h3,h4{{font-family:"Songti SC",STSong,"Noto Serif SC",serif;font-weight:400;line-height:1.4}}
-h1{{font-size:40px;margin:16px 0 28px}}
+h1{{font-size:clamp(18px,4.4vw,40px);margin:16px 0 28px;white-space:nowrap}}
+main h1+p{{font-size:14px;color:var(--muted);letter-spacing:.02em}}
 h2{{font-size:28px;margin:56px 0 18px;padding-top:24px;border-top:1px solid var(--line)}}
 h3{{font-size:22px;margin:36px 0 12px}}
 p,li{{max-width:820px}}
@@ -64,7 +65,7 @@ hr{{border:0;border-top:1px solid var(--line);margin:40px 0}}
 main h3{{display:block}}
 @media(max-width:700px){{.palette-strip{{grid-template-columns:repeat(2,1fr)}}.img-grid{{grid-template-columns:repeat(2,1fr);gap:14px}}}}
 footer{{max-width:1100px;margin:auto;padding:24px 5%;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}}
-@media(max-width:700px){{h1{{font-size:30px}}h2{{font-size:24px}}.top{{flex-direction:column;align-items:flex-start}}}}
+@media(max-width:700px){{main h1+p{{font-size:12px}}h2{{font-size:24px}}.top{{flex-direction:column;align-items:flex-start}}}}
 </style>
 </head>
 <body>
@@ -81,6 +82,10 @@ footer{{max-width:1100px;margin:auto;padding:24px 5%;border-top:1px solid var(--
 {body}
 </main>
 <footer><span>上海君荣纺织品有限公司 · 网站设计提案</span><span>由 {md_name} 自动生成</span></footer>
+<script>
+// 标题保持一行：放不下时逐步缩小字号（最小 18px），仍放不下则允许换行
+(function(){{var h=document.querySelector('main h1');if(!h)return;function fit(){{h.style.fontSize='';h.style.whiteSpace='nowrap';var s=parseFloat(getComputedStyle(h).fontSize);while(h.scrollWidth>h.clientWidth&&s>18){{s-=1;h.style.fontSize=s+'px';}}if(h.scrollWidth>h.clientWidth)h.style.whiteSpace='normal';}}fit();addEventListener('resize',fit);if(document.fonts)document.fonts.ready.then(fit);}})();
+</script>
 </body>
 </html>
 """
