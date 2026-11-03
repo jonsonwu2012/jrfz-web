@@ -17,15 +17,19 @@
 ├── assets/                    网站图片（WebP，46 张）
 ├── concepts/                  V1 版式概念图（WebP）
 ├── previews/                  浏览器渲染预览截图
-├── *.md                       设计方案、生成提示词、设计系统、配色研究
-├── .nojekyll                  让 Pages 原样提供 .md 文件
-└── .github/workflows/pages.yml
+├── *.md                       设计方案、生成提示词、设计系统、配色研究（源文件）
+├── *.html（同名）             由 scripts/build_docs.py 从 .md 生成的文档网页
+├── 404.html                   未找到页；旧的 xxx.md 地址自动跳转到 xxx.html
+├── scripts/build_docs.py      Markdown → HTML 文档渲染脚本（需 pip install markdown）
+├── .nojekyll
+└── .github/workflows/pages.yml  部署时重新生成文档页，网站不直接发布 .md
 ```
 
 ## 部署说明
 
 - 原始 PNG（共约 123MB）已无损尺寸转为 WebP（约 10MB），引用已同步修改，画面尺寸不变。
 - 原始交付压缩包（约 137MB）超过 GitHub 单文件 100MB 限制，未纳入仓库，请另行保存。
+- 修改任何 .md 文档后，推送即可；部署流程会自动重新生成对应的 HTML 页面。本地预览前可运行 `python3 scripts/build_docs.py`。
 - 本地预览：在仓库根目录运行 `python3 -m http.server 8767`，访问 http://127.0.0.1:8767/ 。
 
 
