@@ -20,3 +20,45 @@
 
 /* V2 colour exploration */
 .palette-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:28px 20px;margin:32px 0}.palette-grid a{display:flex;flex-direction:column;gap:10px}.palette-grid a>span{height:88px;border:1px solid #dad8ce}.palette-grid strong{font-weight:400}.palette-grid small{color:#77796d;font-size:12px}.color-dot{display:inline-block;width:15px;height:15px;border:1px solid #ccc;margin-right:8px;vertical-align:middle}.catalog-tools{flex-wrap:wrap}.catalog-tools .search{flex:1;min-width:180px}@media(max-width:700px){.palette-grid{grid-template-columns:repeat(2,1fr);gap:22px 16px}.palette-grid a>span{height:70px}.catalog-tools{gap:14px}.filter-label{flex:1}.product-meta{flex-wrap:wrap;gap:6px}}
+
+/* ---- 合作酒店 ---- */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.brand-wall{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.brand-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:132px;padding:24px 16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+.hb-name{font:400 22px/1.25 Georgia,"Times New Roman",serif;letter-spacing:.02em;color:var(--ink)}
+.hb-cn{font-size:12px;color:var(--muted);letter-spacing:.12em}
+.clients-tail{margin-top:26px;color:var(--muted);font-size:14px;line-height:2}
+.client-stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.client-stats div{padding:40px 24px 36px 0;display:flex;flex-direction:column;gap:10px}
+.client-stats div+div{padding-left:32px;border-left:1px solid var(--line)}
+.client-stats strong{font:400 54px/1 Georgia,"Times New Roman",serif;color:var(--olive)}
+.client-stats span{font-size:13px;color:var(--muted)}
+.landmark-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);column-gap:48px;border-top:1px solid #cfc9bb}
+.landmark-grid li{display:grid;grid-template-columns:36px 1fr auto;gap:12px;align-items:baseline;padding:22px 0;border-bottom:1px solid #cfc9bb}
+.landmark-grid .number{font:13px Georgia,serif;color:var(--olive)}
+.landmark-grid h3{font-size:20px;line-height:1.4}
+.landmark-grid p{font:italic 13px/1.6 Georgia,serif;color:var(--muted);margin-top:4px}
+.landmark-grid .city{font-size:12px;color:var(--muted);letter-spacing:.1em}
+.client-filters{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;margin-bottom:36px}
+.client-chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:40px;padding:0 18px;border:1px solid var(--line);background:transparent;font-size:14px;color:var(--ink);cursor:pointer}
+.chip:hover{border-color:var(--olive)}
+.chip.active{background:var(--olive);border-color:var(--olive);color:#fff}
+.client-search{margin-left:auto}
+.client-search input{height:44px;width:260px;padding:0 14px;border:1px solid var(--line);background:#fff;font:inherit;font-size:14px}
+.client-region+.client-region{margin-top:48px}
+.client-region h3{font-size:26px;display:flex;align-items:baseline;gap:14px;padding-bottom:16px;border-bottom:1px solid var(--ink)}
+.client-region h3 span{font:13px var(--sans);color:var(--muted)}
+.client-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);column-gap:48px}
+.client-grid li{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px}
+.client-grid .stars{color:#b79a62;letter-spacing:.08em;font-size:12px;white-space:nowrap}
+.client-empty{color:var(--muted);display:flex;gap:20px;align-items:center}
+.client-note{margin-top:40px;max-width:900px}
+@media(max-width:1200px){.brand-wall{grid-template-columns:repeat(4,1fr)}.landmark-grid,.client-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){
+ .brand-wall{grid-template-columns:repeat(2,1fr)}.brand-tile{min-height:104px;padding:18px 10px}.hb-name{font-size:17px}
+ .client-stats{grid-template-columns:repeat(2,1fr)}.client-stats div,.client-stats div+div{padding:24px 0 22px;border-left:0}.client-stats div:nth-child(even){padding-left:20px;border-left:1px solid var(--line)}.client-stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}.client-stats strong{font-size:40px}
+ .landmark-grid,.client-grid{grid-template-columns:1fr}.landmark-grid h3{font-size:18px}
+ .client-search{margin-left:0;width:100%}.client-search input{width:100%}
+ .chip{min-height:44px;padding:0 14px}
+}

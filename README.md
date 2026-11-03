@@ -11,6 +11,7 @@
 ```
 ├── index.html                 交互网站入口（hash 路由：#/products、#/solutions …）
 ├── app.js / data.js / styles.css
+├── clients.js                 合作酒店数据（宣传册客户名录、国际品牌、代表酒店），增删客户只改此文件
 ├── design-gallery.html        设计总览
 ├── image-audit-v2.html        39 张 V2 图片逐项核对
 ├── image-manifest-v2.json     图片映射与生成提示词
