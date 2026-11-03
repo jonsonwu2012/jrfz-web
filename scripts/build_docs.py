@@ -78,7 +78,6 @@ footer{{max-width:1100px;margin:auto;padding:24px 5%;border-top:1px solid var(--
     <a href="index.html">交互网站</a>
     <a href="design-gallery.html">设计总览</a>
     <a href="image-audit-v2.html">图片核对</a>
-    <a href="https://github.com/jonsonwu2012/jrfz-web/blob/main/{md_name}" target="_blank" rel="noopener">Markdown 原文</a>
   </nav>
 </header>
 <main>
