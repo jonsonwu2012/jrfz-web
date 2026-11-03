@@ -45,6 +45,24 @@ pre code{{background:none;padding:0;white-space:pre-wrap;word-break:break-word}}
 blockquote{{margin:20px 0;padding:4px 20px;border-left:3px solid var(--olive);background:#fff}}
 hr{{border:0;border-top:1px solid var(--line);margin:40px 0}}
 .swatch{{display:inline-block;width:14px;height:14px;margin-right:6px;vertical-align:-2px;border:1px solid rgba(0,0,0,.12)}}
+.palette-strip{{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:24px 0}}
+.ps-item{{background:var(--paper);padding:14px;display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);line-height:1.6}}
+.ps-item strong{{font:400 17px/1.4 "Songti SC",STSong,"Noto Serif SC",serif;color:var(--ink)}}
+.ps-item code{{background:none;padding:0;font-size:11px}}
+.ps-chip{{display:block;height:56px;border:1px solid rgba(0,0,0,.08);margin-bottom:8px}}
+.color-head{{display:flex;align-items:center;gap:16px;margin:-4px 0 16px}}
+.ch-chip{{width:72px;height:40px;border:1px solid rgba(0,0,0,.08)}}
+.color-head code{{background:none;padding:0;margin-right:12px}}
+.ch-count{{font-size:13px;color:var(--muted)}}
+.img-grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:20px 0 8px}}
+.img-card{{display:flex;flex-direction:column;text-decoration:none;color:var(--ink)}}
+.img-card img{{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:var(--sand)}}
+.img-name{{font-size:14px;margin-top:10px}}
+.img-meta{{font-size:12px;color:var(--muted)}}
+.img-card:hover .img-name{{color:var(--olive)}}
+.scene-card img{{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;margin:8px 0 4px}}
+main h3{{display:block}}
+@media(max-width:700px){{.palette-strip{{grid-template-columns:repeat(2,1fr)}}.img-grid{{grid-template-columns:repeat(2,1fr);gap:14px}}}}
 footer{{max-width:1100px;margin:auto;padding:24px 5%;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}}
 @media(max-width:700px){{h1{{font-size:30px}}h2{{font-size:24px}}.top{{flex-direction:column;align-items:flex-start}}}}
 </style>
