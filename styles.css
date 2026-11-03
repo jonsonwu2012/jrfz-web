@@ -62,3 +62,10 @@
  .client-search{margin-left:0;width:100%}.client-search input{width:100%}
  .chip{min-height:44px;padding:0 14px}
 }
+
+.brand-tile.has-logo{gap:18px}
+.hb-logo{display:block;width:calc(var(--w) * 1px);max-width:78%;height:auto;opacity:.92}
+.brand-tile.has-logo .hb-cn{font-size:11px}
+@media(max-width:700px){.hb-logo{width:calc(var(--w) * .72px);max-width:82%}.brand-tile.has-logo{gap:12px}}
+.brand-tile:not(.has-logo) .hb-name{font-size:19px}
+@media(max-width:700px){.brand-tile:not(.has-logo) .hb-name{font-size:15px}}

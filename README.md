@@ -15,7 +15,7 @@
 ├── design-gallery.html        设计总览
 ├── image-audit-v2.html        39 张 V2 图片逐项核对
 ├── image-manifest-v2.json     图片映射与生成提示词
-├── assets/                    网站图片（WebP，46 张）
+├── assets/                    网站图片（WebP，46 张）；assets/logos/ 为 12 个酒店品牌单色矢量标志
 ├── concepts/                  V1 版式概念图（WebP）
 ├── previews/                  浏览器渲染预览截图
 ├── *.md                       设计方案、生成提示词、设计系统、配色研究（源文件）

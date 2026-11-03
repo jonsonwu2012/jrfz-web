@@ -6,21 +6,22 @@
 window.JR_CLIENTS = {
   source: '名单据君荣企业宣传册整理',
 
-  // Logo 页中可辨识的国际酒店品牌（以文字排版呈现，正式 Logo 待获授权后替换）
+  // Logo 页中可辨识的国际酒店品牌。logo 文件取自各品牌官网，统一描摹为单色矢量图（assets/logos/）；ar 为宽高比。
+  // 未取得官网 Logo 的品牌（君悦、海航酒店集团）以文字排版呈现。
   brands: [
-    {name: 'Shangri-La', cn: '香格里拉'},
-    {name: 'The St. Regis', cn: '瑞吉'},
-    {name: 'JW Marriott', cn: 'JW 万豪'},
+    {name: 'Shangri-La', logo: 'shangrila', ar: 4.893, cn: '香格里拉'},
+    {name: 'The St. Regis', logo: 'stregis', ar: 1.428, cn: '瑞吉'},
+    {name: 'JW Marriott', logo: 'jwmarriott', ar: 2.402, cn: 'JW 万豪'},
+    {name: 'Westin', logo: 'westin', ar: 4.074, cn: '威斯汀'},
+    {name: 'Sheraton', logo: 'sheraton', ar: 2.065, cn: '喜来登'},
+    {name: 'Hilton', logo: 'hilton', ar: 3.743, cn: '希尔顿'},
+    {name: 'Sofitel', logo: 'sofitel', ar: 8.505, cn: '索菲特'},
+    {name: 'Crowne Plaza', logo: 'crowneplaza', ar: 7.495, cn: '皇冠假日'},
+    {name: 'Holiday Inn', logo: 'holidayinn', ar: 3.247, cn: '假日酒店'},
+    {name: 'Radisson', logo: 'radisson', ar: 2.501, cn: '丽笙'},
+    {name: 'Marriott Executive Apartments', logo: 'mea', ar: 1.958, cn: '万豪行政公寓'},
+    {name: 'Howard Johnson', logo: 'howardjohnson', ar: 2.453, cn: '豪生'},
     {name: 'Grand Hyatt', cn: '君悦'},
-    {name: 'Westin', cn: '威斯汀'},
-    {name: 'Sheraton', cn: '喜来登'},
-    {name: 'Hilton', cn: '希尔顿'},
-    {name: 'Sofitel', cn: '索菲特'},
-    {name: 'Crowne Plaza', cn: '皇冠假日'},
-    {name: 'Holiday Inn', cn: '假日酒店'},
-    {name: 'Radisson', cn: '丽笙'},
-    {name: 'Marriott Executive Apartments', cn: '万豪行政公寓'},
-    {name: 'Howard Johnson', cn: '豪生'},
     {name: 'HNA Hotels & Resorts', cn: '海航酒店集团'}
   ],
 
