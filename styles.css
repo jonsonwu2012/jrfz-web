@@ -99,3 +99,32 @@
 @media(max-width:700px){.pillar-grid{grid-template-columns:1fr}.pillar,.pillar+.pillar{padding:28px 0 6px;border-left:0}.pillar+.pillar{border-top:1px solid #cfc9bb}.pillar h3{font-size:26px}.process-grid.five{grid-template-columns:1fr 1fr}.process-grid.five .process-item{padding:0 14px}.process-grid.five .process-item:nth-child(odd){padding-left:0;border-left:0}.process-grid.five .process-item:nth-child(4){padding-left:14px;border-left:1px solid var(--line)}.about-hero-copy h1{font-size:38px}.about-hero-image{height:280px}}
 .process-head p.eyeline{margin:0 0 23px;max-width:none}
 .about-statement p+p{margin-top:16px}
+
+/* ---- 移动端可用性（iPhone / 华为 / 折叠屏）---- */
+@media(max-width:900px){
+ /* iOS Safari：输入框字号 <16px 时聚焦会自动放大页面 */
+ input,select,textarea{font-size:16px !important}
+ select{min-height:44px}
+ .category-menu button{min-height:44px}
+ .text-link{min-height:44px}
+ .breadcrumb a{display:inline-block;padding:12px 0}
+ .footer-top a{display:inline-block;padding:10px 0}
+ .consent{display:flex;gap:12px;align-items:flex-start;padding:8px 0}
+ .consent input{width:22px;height:22px;flex:none;margin-top:1px}
+}
+@media(max-width:700px){
+ .header-actions .button{min-height:44px;font-size:12px}
+ .company{font-size:10px}
+ .category-strip a{min-height:56px;display:flex;flex-direction:column;justify-content:center}
+ .category-strip span{font-size:10px}
+ p.eyeline{font-size:11px}
+ .collection-caption p,.process-item p,.collection-tail span,.image-caption,.detail-photo-note,.hb-cn,.brand-tile.has-logo .hb-cn,.catalog-meta span,.product-meta span,.footer-bottom span{font-size:12px}
+ .breadcrumb{font-size:13px}
+ .footer-top a{font-size:13px}
+}
+@media(max-width:700px){#main p.eyeline,#main .section-head .eyeline{font-size:11px}.brand{padding:6px 0}}
+/* 均衡换行：减少标题与段落末行孤字（支持的浏览器生效，不支持时无影响） */
+h1,h2,h3{text-wrap:balance}
+p,li{text-wrap:pretty}
+@media(min-width:701px) and (max-width:900px){.hero h1{font-size:min(37px,4.2vw)}}
+@media(min-width:901px){.about-hero-copy h1{font-size:clamp(38px,5.6vw,64px)}}

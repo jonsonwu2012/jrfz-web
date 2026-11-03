@@ -65,7 +65,7 @@ hr{{border:0;border-top:1px solid var(--line);margin:40px 0}}
 main h3{{display:block}}
 @media(max-width:700px){{.palette-strip{{grid-template-columns:repeat(2,1fr)}}.img-grid{{grid-template-columns:repeat(2,1fr);gap:14px}}}}
 footer{{max-width:1100px;margin:auto;padding:24px 5%;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}}
-@media(max-width:700px){{main h1+p{{font-size:12px}}h2{{font-size:24px}}.top{{flex-direction:column;align-items:flex-start}}}}
+@media(max-width:700px){{.top nav a{{display:inline-block;padding:10px 0}}main h1+p{{font-size:12px}}h2{{font-size:24px}}.top{{flex-direction:column;align-items:flex-start}}}}
 </style>
 </head>
 <body>
