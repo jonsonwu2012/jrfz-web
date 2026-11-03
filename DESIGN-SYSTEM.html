@@ -4,13 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>君荣纺织 · 网站设计系统 V1 · 君荣纺织</title>
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
 <style>
 :root{--paper:#F7F5EF;--ink:#252923;--olive:#626A4B;--sand:#E8E3D8;--line:#DAD8CE;--muted:#6f7068}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.85 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
 a{color:var(--olive)}
 .top{display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:1100px;margin:auto;padding:22px 5%;border-bottom:1px solid var(--line)}
-.top .brand{font:28px Georgia,"Times New Roman",serif;color:var(--ink);text-decoration:none}
+.top .brand{line-height:0}
+.top .brand img{display:block;height:48px;width:auto}
 .top nav{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
 .top nav a{color:var(--ink);text-decoration:none}
 .top nav a:hover{color:var(--olive)}
@@ -49,12 +52,12 @@ hr{border:0;border-top:1px solid var(--line);margin:40px 0}
 main h3{display:block}
 @media(max-width:700px){.palette-strip{grid-template-columns:repeat(2,1fr)}.img-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
 footer{max-width:1100px;margin:auto;padding:24px 5%;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-@media(max-width:700px){.top nav a{display:inline-block;padding:10px 0}main h1+p{font-size:12px}h2{font-size:24px}.top{flex-direction:column;align-items:flex-start}}
+@media(max-width:700px){.top .brand img{height:40px}.top nav a{display:inline-block;padding:10px 0}main h1+p{font-size:12px}h2{font-size:24px}.top{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 <body>
 <header class="top">
-  <a class="brand" href="index.html">JUNRONG</a>
+  <a class="brand" href="index.html" aria-label="君荣纺织首页"><img src="assets/brand/junrong-logo.svg?v=1" alt="JUNRONG 君荣纺织 · 上海君荣纺织品有限公司" width="930" height="309"></a>
   <nav>
     <a href="index.html">交互网站</a>
     <a href="design-gallery.html">设计总览</a>

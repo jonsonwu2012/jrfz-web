@@ -128,3 +128,12 @@ h1,h2,h3{text-wrap:balance}
 p,li{text-wrap:pretty}
 @media(min-width:701px) and (max-width:900px){.hero h1{font-size:min(37px,4.2vw)}}
 @media(min-width:901px){.about-hero-copy h1{font-size:clamp(38px,5.6vw,64px)}}
+
+/* ---- 公司正式 Logo ---- */
+.brand{line-height:0}
+.brand-logo{display:block;height:72px;width:auto}
+.footer-brand{display:inline-block;line-height:0}
+.footer-brand img{display:block;height:104px;width:auto}
+@media(max-width:1200px){.brand-logo{height:60px}}
+@media(max-width:700px){.brand-logo{height:48px}.footer-brand img{height:84px}}
+@media(max-width:380px){.brand-logo{height:40px}.site-header{gap:8px}}

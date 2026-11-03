@@ -4,13 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>上海君荣纺织 · 网站设计交付 · 君荣纺织</title>
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
 <style>
 :root{--paper:#F7F5EF;--ink:#252923;--olive:#626A4B;--sand:#E8E3D8;--line:#DAD8CE;--muted:#6f7068}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.85 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
 a{color:var(--olive)}
 .top{display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:1100px;margin:auto;padding:22px 5%;border-bottom:1px solid var(--line)}
-.top .brand{font:28px Georgia,"Times New Roman",serif;color:var(--ink);text-decoration:none}
+.top .brand{line-height:0}
+.top .brand img{display:block;height:48px;width:auto}
 .top nav{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
 .top nav a{color:var(--ink);text-decoration:none}
 .top nav a:hover{color:var(--olive)}
@@ -49,12 +52,12 @@ hr{border:0;border-top:1px solid var(--line);margin:40px 0}
 main h3{display:block}
 @media(max-width:700px){.palette-strip{grid-template-columns:repeat(2,1fr)}.img-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
 footer{max-width:1100px;margin:auto;padding:24px 5%;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-@media(max-width:700px){.top nav a{display:inline-block;padding:10px 0}main h1+p{font-size:12px}h2{font-size:24px}.top{flex-direction:column;align-items:flex-start}}
+@media(max-width:700px){.top .brand img{height:40px}.top nav a{display:inline-block;padding:10px 0}main h1+p{font-size:12px}h2{font-size:24px}.top{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 <body>
 <header class="top">
-  <a class="brand" href="index.html">JUNRONG</a>
+  <a class="brand" href="index.html" aria-label="君荣纺织首页"><img src="assets/brand/junrong-logo.svg?v=1" alt="JUNRONG 君荣纺织 · 上海君荣纺织品有限公司" width="930" height="309"></a>
   <nav>
     <a href="index.html">交互网站</a>
     <a href="design-gallery.html">设计总览</a>
@@ -80,6 +83,7 @@ footer{max-width:1100px;margin:auto;padding:24px 5%;border-top:1px solid var(--l
 ├── image-audit-v2.html        39 张 V2 图片逐项核对
 ├── image-manifest-v2.json     图片映射与生成提示词
 ├── assets/                    网站图片（WebP，46 张）；assets/logos/ 为 12 个酒店品牌单色矢量标志
+│   └── brand/                 公司正式 Logo（junrong-logo.svg 原文件）、图形标志与网站图标
 ├── concepts/                  V1 版式概念图（WebP）
 ├── previews/                  浏览器渲染预览截图
 ├── *.md                       设计方案、生成提示词、设计系统、配色研究（源文件）
@@ -159,7 +163,7 @@ footer{max-width:1100px;margin:auto;padding:24px 5%;border-top:1px solid var(--l
 </ul>
 <h2 id="_7">资料边界</h2>
 <p>公司名称和 B2B 定位来自用户。其余产品与规格为设计示例，供货范围、工艺、样品政策、起订量和交期需企业确认。所有酒店与产品图都是 AI 概念图，不能当作实拍、实际库存或真实客户案例。</p>
-<p>JUNRONG 字标为提案，不代表已确认商标或官方英文名称。未编造企业成立时间、产能、资质、客户 Logo、地址或电话。</p>
+<p>公司 Logo 以企业提供的正式文件为准（assets/brand/junrong-logo.svg）。未编造企业成立时间、产能、资质、客户 Logo、地址或电话。</p>
 <p>原始概念图中个别导航和文案存在生成差异，交互稿统一使用已写明的设计规范。图片清晰度和整体视觉以原始图为参考，真实中文、响应式和操作状态以 HTML 版本为准。</p>
 <p>正式上线还需：企业素材与信息确认、真实询价接收端、隐私与必要备案内容、正式域名部署、产品内容管理及浏览器兼容验收。本交付只完成设计与本地交互演示。</p>
 <h2 id="_8">实际检查记录</h2>
