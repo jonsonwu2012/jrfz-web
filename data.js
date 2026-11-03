@@ -1,6 +1,6 @@
 window.JR = {
  categories: [
-  {id:'bed',name:'客房床品',en:'BED LINEN',image:'hero',description:'床单 · 被套 · 枕套 · 床笠 · 床裙',items:['纯棉缎纹床品套件','酒店床单','酒店被套','酒店枕套','床笠与床裙']},
+  {id:'bed',name:'客房床品',en:'BED LINEN',image:'hero',description:'床单 · 被套 · 枕套 · 床笠 · 床裙',items:['纯棉贡缎床品套件','酒店床单','酒店被套','酒店枕套','床笠与床裙']},
   {id:'core',name:'被芯与枕芯',en:'DUVETS & PILLOWS',image:'duvet',description:'被芯 · 枕芯 · 床垫保护垫 · 枕芯保护套',items:['酒店被芯','酒店枕芯','床垫保护垫','枕芯保护套','季节被芯选型']},
   {id:'bath',name:'卫浴布草',en:'BATH LINEN',image:'towels',description:'方巾 · 面巾 · 浴巾 · 地巾 · 泳池巾',items:['酒店毛浴巾','酒店方巾与面巾','酒店地巾','泳池与沙滩巾','SPA 理疗用巾']},
   {id:'robe',name:'浴袍与拖鞋',en:'ROBES & SLIPPERS',image:'robe',description:'毛圈浴袍 · 华夫格浴袍 · 割绒浴袍 · 拖鞋',items:['浴袍与拖鞋','毛圈浴袍','华夫格浴袍','割绒浴袍','客房拖鞋']},
