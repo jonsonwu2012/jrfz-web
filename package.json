@@ -1,0 +1,17 @@
+{
+  "name": "jrfz-web",
+  "private": true,
+  "description": "上海君荣纺织网站与内容管理后台",
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "node server/build.js",
+    "test": "node --test test/api.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "busboy": "^1.6.0",
+    "express": "^4.21.2"
+  }
+}
