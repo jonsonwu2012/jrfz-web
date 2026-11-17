@@ -1,4 +1,96 @@
-# 上海君荣纺织 · 网站设计交付
+# 上海君荣纺织 · 网站与内容管理
+
+网站正文、导航、产品、配色、配套方案、合作酒店和页面文案都放在 `content/` 目录。后台改完会立刻反映在本机网站上；推送到 `main` 后，GitHub Actions 用同一份内容重新生成静态站并发布到 GitHub Pages。
+
+设计说明见 [docs/CMS-DESIGN.md](docs/CMS-DESIGN.md)。
+
+## 可以管理的内容
+
+- 站点标题、搜索描述、主题色、联系方式（电话、邮箱、地址；留空则前台不显示）
+- 顶部导航、页脚标语、公司名称和页脚链接
+- 首页、产品中心、产品详情、配套方案、定制服务、关于君荣、工厂实景、合作酒店、询价页、404 和提示语
+- 产品分类、30 条起的产品目录、配色、三套空间方案
+- 国际酒店品牌、代表酒店、分地区的星级客户名录
+- 图片上传，以及在本服务器上提交的询盘
+
+前台版式、字体和配色仍沿用现有设计稿。后台只替换内容。
+
+## 三种运行方式
+
+### 1. 本机或 GitHub Codespaces：一条命令
+
+需要 Node.js 20 或以上。
+
+```bash
+npm install
+npm start
+```
+
+- 网站：http://127.0.0.1:8080/
+- 后台：http://127.0.0.1:8080/admin
+- 默认账号 `admin`，密码 `junrong-admin`。登录后请到「账号」里修改。
+
+用 Codespaces 打开本仓库时，容器会执行 `npm install` 并启动同一条命令，端口 8080 会被转发。
+
+后台把修改写回 `content/*.json`。在服务器上预览会立即生效。若要把改动带到 GitHub Pages，提交 `content/` 后推送到 `main`。
+
+### 2. GitHub Pages：用内容生成静态站
+
+GitHub Pages 只能托管静态文件，后台不能跑在 Pages 上。`.github/workflows/pages.yml` 会在推送到 `main` 时：
+
+1. 把 Markdown 文档渲染成 HTML
+2. 执行 `npm run build`，从 `content/` 生成 `dist/`
+3. 把 `dist/` 发布到 GitHub Pages
+
+静态站上的询价单仍在访客自己的浏览器里生成，不会进入后台。需要在线收下询盘时，使用下面的服务器部署。
+
+在线地址：https://jonsonwu2012.github.io/jrfz-web/
+
+### 3. 以后迁到自己的 Linux VPS
+
+同一套程序用 Docker 跑，网站和后台都在这台机器上，改完刷新即可，不必再经过 GitHub。
+
+```bash
+# 在服务器上，进入仓库目录
+export ADMIN_PASSWORD='请换成足够长的密码'
+export SESSION_SECRET="$(openssl rand -hex 32)"
+docker compose up -d --build
+```
+
+然后打开 `http://服务器IP:8080/` 和 `http://服务器IP:8080/admin`。内容和上传的图片分别保存在 Docker 卷 `cms-content`、`cms-uploads` 里，重建容器不会丢掉。
+
+前面可以加 Nginx，把域名反代到 `127.0.0.1:8080`，并限制上传大小：
+
+```nginx
+server {
+  listen 80;
+  server_name example.com;
+  client_max_body_size 12m;
+  location / {
+    proxy_pass http://127.0.0.1:8080;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+  }
+}
+```
+
+启用 HTTPS 后，把 `COOKIE_SECURE` 设为 `1`，登录状态只通过加密连接发送。使用上面的 Nginx 时再把 `TRUST_PROXY` 设为 `1`，否则不要打开，以免登录限流被伪造的来源头绕过。
+
+上传的图片在 `uploads/`。要让 GitHub Pages 也能显示这些图片，需要和 `content/` 一起提交。只在 VPS 上使用时，图片留在 `cms-uploads` 卷里即可。
+
+没有设置足够长的 `SESSION_SECRET` 时，生产环境会拒绝启动。本机 `npm start` 会在 `content/auth.json` 里自己生成一把密钥，这个文件不要提交。修改密码会使此前发出的登录状态失效。
+
+首次启动如果数据卷是空的，程序会从镜像里的原稿复制出 `content/`。默认账号仍是 `admin` / `junrong-admin`，上线前请立刻修改密码，并把 `SESSION_SECRET` 换成随机字符串。示例变量见 `.env.example`。
+
+## 开发与测试
+
+```bash
+npm test
+npm run build   # 只生成 dist/，不启动服务
+```
+
+## 网站设计交付说明
 
 > **在线访问**：https://jonsonwu2012.github.io/jrfz-web/ （推送到 `main` 后由 GitHub Actions 自动部署到 GitHub Pages）
 >
@@ -11,7 +103,7 @@
 ```
 ├── index.html                 交互网站入口（hash 路由：#/products、#/solutions …）
 ├── app.js / data.js / styles.css
-├── clients.js                 合作酒店数据（宣传册客户名录、国际品牌、代表酒店），增删客户只改此文件
+├── clients.js                 由 content/clients.json 生成的合作酒店数据，请在后台修改
 ├── design-gallery.html        设计总览
 ├── image-audit-v2.html        39 张 V2 图片逐项核对
 ├── image-manifest-v2.json     图片映射与生成提示词
