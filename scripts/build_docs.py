@@ -5,6 +5,13 @@
 - 每个 *.md 生成同名 .html（如 配色趋势与图片核对-V2.md → 配色趋势与图片核对-V2.html）
 - 文档之间的 .md 链接自动改为 .html
 - 依赖：pip install markdown
+
+渲染后还会执行 prune_for_publish()：把内部资料（设计文档、图片核对、
+设计稿/预览图）从检出目录中删掉。Pages 工作流紧接着用 tar 把检出目录
+打包成 _site 发布，所以这里是内部文件不上线的关口——工作流文件本身
+（.github/workflows/pages.yml）Muse 的 GitHub App 没有权限修改
+（GitHub 要求 workflows 权限），故排除逻辑放在本脚本。文件仍保留在
+仓库里，只是不会出现在公开网站上。
 """
 import html
 import pathlib
@@ -111,6 +118,36 @@ def render(md_path: pathlib.Path) -> None:
     print("built", md_path.with_suffix(".html").name)
 
 
+# 不上线的内部资料：渲染出的文档页、图片核对页与清单、设计稿与预览图目录。
+PUBLISH_EXCLUDE_FILES = [
+    "DESIGN-SYSTEM.html",
+    "README.html",
+    "上海君荣纺织-网站生成提示词.html",
+    "上海君荣纺织-网站设计方案与提示词.html",
+    "配色趋势与图片核对-V2.html",
+    "image-audit-v2.html",
+    "image-manifest-v2.json",
+]
+PUBLISH_EXCLUDE_DIRS = ["concepts", "previews"]
+
+
+def prune_for_publish() -> None:
+    """从检出目录删掉内部资料，使其不进入发布产物（见模块 docstring）。"""
+    import shutil
+
+    for name in PUBLISH_EXCLUDE_FILES:
+        p = ROOT / name
+        if p.exists():
+            p.unlink()
+            print("pruned from publish:", name)
+    for name in PUBLISH_EXCLUDE_DIRS:
+        p = ROOT / name
+        if p.is_dir():
+            shutil.rmtree(p)
+            print("pruned from publish:", name + "/")
+
+
 if __name__ == "__main__":
     for p in sorted(ROOT.glob("*.md")):
         render(p)
+    prune_for_publish()
