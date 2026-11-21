@@ -10,30 +10,31 @@
   <link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css?v=15">
+  <script defer src="i18n.js?v=1"></script>
   <script defer src="data.js?v=15"></script>
   <script defer src="clients.js?v=15"></script>
   <script defer src="app.js?v=15"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">跳转到主要内容</a>
+  <a class="skip-link" href="#main" data-i18n="跳转到主要内容">跳转到主要内容</a>
   <header class="site-header">
-    <a href="#/" class="brand" aria-label="君荣纺织首页"><img class="brand-logo" src="assets/brand/junrong-logo.svg?v=1" alt="JUNRONG 君荣纺织 · 上海君荣纺织品有限公司" width="930" height="309"></a>
-    <nav class="desktop-nav" aria-label="主导航">
-      <a href="#/" data-nav="home">首页</a>
-      <a href="#/products" data-nav="products">产品中心</a>
-      <a href="#/solutions" data-nav="solutions">配套方案</a>
-      <a href="#/clients" data-nav="clients">合作酒店</a>
-      <a href="#/custom" data-nav="custom">定制服务</a>
-      <a href="#/factory" data-nav="factory">工厂实景</a>
-      <a href="#/about" data-nav="about">关于君荣</a>
+    <a href="#/" class="brand" aria-label="君荣纺织首页" data-i18n-aria="君荣纺织首页"><img class="brand-logo" src="assets/brand/junrong-logo.svg?v=1" alt="JUNRONG 君荣纺织 · 上海君荣纺织品有限公司" data-i18n-alt="JUNRONG 君荣纺织 · 上海君荣纺织品有限公司" width="930" height="309"></a>
+    <nav class="desktop-nav" aria-label="主导航" data-i18n-aria="主导航">
+      <a href="#/" data-nav="home" data-i18n="首页">首页</a>
+      <a href="#/products" data-nav="products" data-i18n="产品中心">产品中心</a>
+      <a href="#/solutions" data-nav="solutions" data-i18n="配套方案">配套方案</a>
+      <a href="#/clients" data-nav="clients" data-i18n="合作酒店">合作酒店</a>
+      <a href="#/custom" data-nav="custom" data-i18n="定制服务">定制服务</a>
+      <a href="#/factory" data-nav="factory" data-i18n="工厂实景">工厂实景</a>
+      <a href="#/about" data-nav="about" data-i18n="关于君荣">关于君荣</a>
     </nav>
-    <div class="header-actions"><a class="button outline quote-nav" href="#/inquiry">询价清单 <span class="quote-count">0</span></a><a class="button primary desktop-quote" href="#/inquiry">获取报价</a><button class="menu-toggle" aria-label="展开导航" aria-expanded="false"><span></span><span></span></button></div>
+    <div class="header-actions"><div class="lang-switch" role="group" aria-label="Language · 语言 · 言語"><button data-lang="zh" aria-pressed="true">中</button><button data-lang="en" aria-pressed="false">EN</button><button data-lang="ja" aria-pressed="false">日</button></div><a class="button outline quote-nav" href="#/inquiry"><span data-i18n="询价清单">询价清单</span> <span class="quote-count">0</span></a><a class="button primary desktop-quote" href="#/inquiry" data-i18n="获取报价">获取报价</a><button class="menu-toggle" aria-label="展开导航" data-i18n-aria="展开导航" aria-expanded="false"><span></span><span></span></button></div>
   </header>
-  <nav class="mobile-nav" aria-label="移动端导航" hidden><a href="#/">首页</a><a href="#/products">产品中心</a><a href="#/solutions">配套方案</a><a href="#/clients">合作酒店</a><a href="#/custom">定制服务</a><a href="#/factory">工厂实景</a><a href="#/about">关于君荣</a><a href="#/inquiry">获取报价</a></nav>
+  <nav class="mobile-nav" aria-label="移动端导航" data-i18n-aria="移动端导航" hidden><a href="#/" data-i18n="首页">首页</a><a href="#/products" data-i18n="产品中心">产品中心</a><a href="#/solutions" data-i18n="配套方案">配套方案</a><a href="#/clients" data-i18n="合作酒店">合作酒店</a><a href="#/custom" data-i18n="定制服务">定制服务</a><a href="#/factory" data-i18n="工厂实景">工厂实景</a><a href="#/about" data-i18n="关于君荣">关于君荣</a><a href="#/inquiry" data-i18n="获取报价">获取报价</a><div class="lang-switch" role="group" aria-label="Language · 语言 · 言語"><button data-lang="zh" aria-pressed="true">中</button><button data-lang="en" aria-pressed="false">EN</button><button data-lang="ja" aria-pressed="false">日</button></div></nav>
   <main id="main" tabindex="-1"></main>
   <footer class="site-footer">
-    <div class="footer-top"><a class="footer-brand" href="#/" aria-label="君荣纺织首页"><img src="assets/brand/junrong-logo.svg?v=1" alt="JUNRONG 君荣纺织 · 上海君荣纺织品有限公司" width="930" height="309"></a><p>从一间客房，到整座酒店。<br>让织物回应每一种款待。</p><div><a href="#/products">探索产品 ↗</a><a href="#/inquiry">项目询价 ↗</a><a href="design-gallery.html">查看整套设计稿 ↗</a></div></div>
-    <div class="footer-bottom"><span>上海君荣纺织品有限公司</span><span>© 2026 JUNRONG · 网站设计提案</span><span>图像与产品为选型演示，非实际供货承诺。</span></div>
+    <div class="footer-top"><a class="footer-brand" href="#/" aria-label="君荣纺织首页" data-i18n-aria="君荣纺织首页"><img src="assets/brand/junrong-logo.svg?v=1" alt="JUNRONG 君荣纺织 · 上海君荣纺织品有限公司" data-i18n-alt="JUNRONG 君荣纺织 · 上海君荣纺织品有限公司" width="930" height="309"></a><p><span data-i18n="从一间客房，到整座酒店。">从一间客房，到整座酒店。</span><br><span data-i18n="让织物回应每一种款待。">让织物回应每一种款待。</span></p><div><a href="#/products"><span data-i18n="探索产品">探索产品</span> ↗</a><a href="#/inquiry"><span data-i18n="项目询价">项目询价</span> ↗</a><a href="design-gallery.html"><span data-i18n="查看整套设计稿">查看整套设计稿</span> ↗</a></div></div>
+    <div class="footer-bottom"><span data-i18n="上海君荣纺织品有限公司">上海君荣纺织品有限公司</span><span>© 2026 JUNRONG · <span data-i18n="网站设计提案">网站设计提案</span></span><span data-i18n="图像与产品为选型演示，非实际供货承诺。">图像与产品为选型演示，非实际供货承诺。</span></div>
   </footer>
   <div class="toast" role="status" aria-live="polite"></div>
 </body>

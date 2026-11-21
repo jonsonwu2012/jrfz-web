@@ -56,4 +56,4 @@ JR.products.forEach(p=>{
  if(p.id==='robe-5')p.unit='双';
  if(p.id==='core-2')p.unit='只';
 });
-JR.scenes.forEach(s=>s.brief+=' 配色方向：'+s.palette+'与中性色；以实物色样确认。');
+JR.scenes.forEach(s=>{s.briefBase=s.brief;s.brief+=' 配色方向：'+s.palette+'与中性色；以实物色样确认。';});
